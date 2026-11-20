@@ -918,10 +918,13 @@ public class FurnitureTable extends JTable implements View, Printable {
           case DEPTH :
             writer.write(sizeFormat.format(copiedPiece.getDepth()));
             break;
-          case HEIGHT : 
+          case HEIGHT :
             writer.write(sizeFormat.format(copiedPiece.getHeight()));
             break;
-          case X : 
+          case VOLUME :
+            writer.write(sizeFormat.format(copiedPiece.getVolume()));
+            break;
+          case X :
             writer.write(sizeFormat.format(copiedPiece.getX()));
             break;
           case Y :
@@ -1128,9 +1131,11 @@ public class FurnitureTable extends JTable implements View, Printable {
           return preferences.getLocalizedString(FurnitureTable.class, "widthColumn");
         case DEPTH :
           return preferences.getLocalizedString(FurnitureTable.class, "depthColumn");
-        case HEIGHT : 
+        case HEIGHT :
           return preferences.getLocalizedString(FurnitureTable.class, "heightColumn");
-        case X : 
+        case VOLUME :
+          return preferences.getLocalizedString(FurnitureTable.class, "volumeColumn");
+        case X :
           return preferences.getLocalizedString(FurnitureTable.class, "xColumn");
         case Y :
           return preferences.getLocalizedString(FurnitureTable.class, "yColumn");
@@ -1173,11 +1178,13 @@ public class FurnitureTable extends JTable implements View, Printable {
           return 120; 
         case WIDTH :
         case DEPTH :
-        case HEIGHT : 
-        case X : 
+        case HEIGHT :
+        case X :
         case Y :
-        case ELEVATION : 
+        case ELEVATION :
           return 50;
+        case VOLUME :
+          return 70;
         case ANGLE :
           return 35;        
         case LEVEL :
